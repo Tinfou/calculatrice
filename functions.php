@@ -25,9 +25,22 @@
     function calcul (?string $nombre1 , ?string $nombre2, string $operateur) : string
     {
         if (verifieNombre($nombre1) && verifieNombre($nombre2) && verifieOperateur($operateur)){
-            $resultat =0;
-            eval(" \$resultat = $nombre1 $operateur $nombre2;");
-            return "valiny : $resultat";
+            if($operateur =="+"){
+                $result = $nombre1+$nombre2;
+                return "valiny $result";
+            }
+            if($operateur =="-"){
+                $result = $nombre1-$nombre2;
+                return "valiny $result";
+            }
+            if($operateur =="/"){
+                $result = $nombre1/$nombre2;
+                return "valiny $result";
+            }
+            if($operateur =="*"){
+                $result = $nombre1*$nombre2;
+                return "valiny $result";
+            }
         }
         elseif(verifieNombre($nombre1)==0 || verifieNombre($nombre2)==0){
             return "un des nombres est 0";
