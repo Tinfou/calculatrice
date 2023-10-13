@@ -26,8 +26,11 @@
     {
         if (verifieNombre($nombre1) && verifieNombre($nombre2) && verifieOperateur($operateur)){
             $resultat =0;
-            eval("\$resultat = $nombre1 $operateur $nombre2;");
+            eval(" \$resultat = $nombre1 $operateur $nombre2;");
             return "valiny : $resultat";
+        }
+        elseif(verifieNombre($nombre1)==0 || verifieNombre($nombre2)==0){
+            return "un des nombres est 0";
         }
         else{
             return "erreur";
